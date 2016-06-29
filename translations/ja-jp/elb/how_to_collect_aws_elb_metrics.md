@@ -1,6 +1,6 @@
 > *This post is part 2 of a 3-part series on monitoring Amazon ELB. [Part 1](https://www.datadoghq.com/blog/top-elb-health-and-performance-metrics) explores its key performance metrics, and [Part 3](https://www.datadoghq.com/blog/monitor-elb-performance-with-datadog) shows you how Datadog can help you monitor ELB.*
 
-*このポストは、Amazon ELBの監視に関する3回シリーズのPart 2です。 [Part 1](https://www.datadoghq.com/blog/top-elb-health-and-performance-metrics)では、ELBのキーメトリクスを解説しています。[Part 3](https://www.datadoghq.com/blog/monitor-elb-performance-with-datadog)では、Amazon ELBの監視にDatadogを役立てる方法を解説していきます。*
+*このポストは、Amazon ELBの監視に関する3回シリーズのPart 2です。 [Part 1](https://www.datadoghq.com/blog/top-elb-health-and-performance-metrics)では、ELBのキーメトリクスを解説しました。[Part 3](https://www.datadoghq.com/blog/monitor-elb-performance-with-datadog)では、Amazon ELBの監視にDatadogを役立てる方法を解説していきます。*
 
 
 > This part of the series is about collecting ELB metrics, which are available from AWS via CloudWatch. They can be accessed in three different ways:
@@ -11,27 +11,27 @@
 > 
 > We will also explain how [using ELB access logs](#logs) can be useful when investigating on specific request issues.
 
-シリーズのこの部分では、AWSのCloudWatch経由で集取できるELBメトリクスの集取方法に関し解説していきます。それらのメトリクスには、次の3つの方法でアクセスすることができます:
+シリーズのPart2では、AWS CloudWatch経由でELBメトリクスを収集する方法を解説していきます。AWS CloudWatchを経由したELBメトリクスには、次の3つの方法でアクセスすることができます:
 
 - [AWS管理コンソールを使用して](#console)
 - [コマンドラインインターフェイスを使用して（CLI）](#cli)
 - [CloudWatchのAPIをつかった監視ツールを使用して](#tools)
 
-ELBのアクセスログの使用が、特定リクエストの問題の調査に有用なことも解説していきます。
+更に、特定のリクエスト障害を調査する際に、ELBのアクセスログが有効に活用できることも解説していきます。
 
 
 ## Using the AWS Management Console
 
 > Using the online management console is the simplest way to monitor your load balancers with CloudWatch. It allows you to set up basic automated alerts and to get a visual picture of recent changes in individual metrics.
 
-オンライン管理コンソールの使用は、CloudWatchを使ったロードバランサーの監視としては最も簡単な方法です。この管理コンソールを使うことで、基本的な自動化されたアラートを設定すると、個々のメトリックの最近の変化を可視化することができまし。
+AWS管理コンソールの使用は、CloudWatchを経由したロードバランサーの監視の最も簡単な方法です。この管理コンソールを通して基礎的な自動アラートを設定することができ、又、個々のメトリックの直近の変化を可視化することができます。
 
 
 ### Graphs
 
 > Once you are signed in to your AWS account, you can open the [CloudWatch console](https://console.aws.amazon.com/cloudwatch/home#metrics:) and then browse the metrics related to the different AWS services.
 
-AWSアカウントにサインインしたら、[CloudWatchコンソール](https://console.aws.amazon.com/cloudwatch/home#metrics:)を表示すると、各サービスに関連するメトリクスを閲覧することができます。
+AWSアカウントにサインインし、[CloudWatchコンソール](https://console.aws.amazon.com/cloudwatch/home#metrics:)を表示すると、各サービスに関連するメトリクスを閲覧することができます。
 
 
 [![ELB metrics in AWS Console](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/2-01.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/2-01.png)
